@@ -30,6 +30,7 @@ function calculateResult() {
   }
 
   if (peopleInput.value !== "" && Number(peopleInput.value) === 0) {
+    peopleInput.value = "0";
     cantBeZero.classList.add("not-zero");
     cantBeZeroText.style.display = "block";
   } else {
@@ -48,7 +49,14 @@ function sanitizeNumbers(input) {
   return Number(val);
 }
 
+function deleteZero(input) {
+  if (input.value > 1 && input.value.startsWith("0")) {
+    input.value = input.value.replace(/^0+/, "");
+  }
+}
+
 billInput.addEventListener("input", () => {
+  deleteZero(billInput);
   calculateResult();
   resetBtn.classList.add("active-reset");
 });
@@ -59,11 +67,13 @@ radioInput.forEach((r) => {
   });
 });
 peopleInput.addEventListener("input", () => {
+  deleteZero(peopleInput);
   calculateResult();
   resetBtn.classList.add("active-reset");
 });
 customRadio.addEventListener("input", () => {
   radioInput.forEach((r) => (r.checked = false));
+  deleteZero(customRadio);
   calculateResult();
   resetBtn.classList.add("active-reset");
 });
