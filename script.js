@@ -40,7 +40,7 @@ function calculateResult() {
     cant.textContent = "Enter whole number";
     cant.style.display = "block";
   } else {
-    cant.classList.remove("not-zero");
+    cantBeZero.classList.remove("not-zero");
     cant.style.display = "none";
   }
 }
@@ -91,4 +91,6 @@ resetBtn.addEventListener("click", () => {
   tipAmountDisplay.textContent = `$0.00`;
   totalAmountDisplay.textContent = `$0.00`;
   resetBtn.classList.remove("active-reset");
+  cantBeZero.classList.remove("not-zero");
+  cant.style.display = "none";
 });
