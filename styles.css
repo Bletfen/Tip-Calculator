@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Martian+Mono:wght@100..800&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Space Mono";
+}
+
+body {
+  background: #c5e4e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 25px 25px 0px 0px;
+  background: #fff;
+  box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  margin-top: 4rem;
+  padding: 3.2rem;
+  flex-direction: column;
+  max-width: 100rem;
+}
+
+.text {
+  color: #5e7a7d;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.bill-input {
+  border-radius: 5px;
+  background: #f3f9fa;
+  padding: 0.6rem 1.7rem 0.6rem 1.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  color: #00474b;
+  text-align: right;
+  font-family: "Space Mono";
+  font-size: 2.4rem;
+  font-weight: 700;
+  border: none;
+  background-color: #f3f9fa;
+  opacity: 0.35;
+  outline: none;
+}
+
+.tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+}
+
+.tip-percent-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ორ სვეტად */
+  gap: 1.6rem;
+  text-align: center;
+  width: 100%;
+}
+
+.tip-percent {
+  padding: 0.6rem 1.7rem;
+  border-radius: 5px;
+  background: #00474b;
+  width: 100%;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="radio"]:checked + label.tip-percent {
+  background: #26c2ae;
+  color: #00474b;
+}
+
+.custom-input {
+  background: #f3f9fa;
+  border: none;
+  text-align: right;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #547878;
+  padding: 0;
+  border-radius: 5px;
+  padding-right: 1rem;
+}
+
+.custom-input:focus {
+  outline: 2px solid #26c2ae;
+}
+
+.number-text {
+  color: #fff;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.people {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.number-input {
+  border-radius: 5px;
+  background: #f3f9fa;
+  padding: 0.6rem 1.7rem 0.6rem 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* SECTION-2 */
+
+.tip-total-reset {
+  padding: 3.9rem 2.2rem 2.4rem 2.4rem;
+  border-radius: 1.5rem;
+  background: #00474b;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.2rem;
+}
+
+.tip-total-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.tip-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.total-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resetBtn {
+  padding: 0.9rem 3.2rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #0d686d;
+}
+
+.resetBtn span {
+  color: #00474b;
+  text-align: center;
+  font-family: "Space Mono";
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tipText {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.person-text {
+  color: #7f9d9f;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.amount {
+  color: #26c2ae;
+  text-align: right;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.667px;
+}
+
+.tip-percent:focus {
+  background: #26c2ae;
+}
+
+.bill-input:focus-within {
+  border: 2px solid #26c2ae;
+  background: #f3f9fa;
+}
+
+.number-input:focus-within {
+  border: 2px solid #26c2ae;
+  background: #f3f9fa;
+}
+
+.resetBtn.active-reset {
+  background-color: #26c2ae;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.number-input.not-zero {
+  border-radius: 5px;
+  border: 2px solid #e17052;
+  background: #f3f9fa;
+}
+
+.cant-be-zero {
+  color: #e17457;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: none;
+}
+
+.people-text-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari, Edge */
+  margin: 0;
+}
+
+/* DESKTOP */
+
+@media only screen and (min-width: 90rem) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    margin-top: 16.3rem;
+    margin-bottom: 8.7rem;
+  }
+
+  main {
+    flex-direction: row;
+    gap: 4.8rem;
+    max-width: 86rem;
+    border-radius: 2.5rem;
+    background: #fff;
+    box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  }
+
+  .bill-tip-people {
+    max-width: 37.9rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .tip-total-reset {
+    max-width: 41.3rem;
+    margin: unset;
+    justify-content: space-between;
+    padding: 4rem;
+  }
+
+  .tip-amount {
+    gap: 9.2rem;
+  }
+
+  .tip-total-container {
+    gap: 5.3rem;
+    margin: unset;
+  }
+
+  .tip-percent-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tip {
+    margin-top: 4rem;
+  }
+
+  .people {
+    margin-top: 4rem;
+  }
+
+  .bill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tip-percent:hover {
+    background: #9fe8df;
+    cursor: pointer;
+  }
+}
