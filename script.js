@@ -6,12 +6,13 @@ const totalAmountDisplay = document.querySelector("#totalAmount");
 const customRadio = document.querySelector(`input[name = "custom"]`);
 const resetBtn = document.querySelector(".resetBtn");
 const cantBeZero = document.querySelector(".number-input");
-const cantBeZeroText = document.querySelector(".cant-be-zero");
+const cant = document.querySelector(".cant");
 
 function calculateResult() {
   const billValue = sanitizeNumbers(billInput);
   const peopleValue = sanitizeNumbers(peopleInput);
   const customRadioValue = sanitizeNumbers(customRadio);
+  const peopleValuteStr = peopleValue.toString();
 
   const selectedRadioValue =
     parseInt([...radioInput].find((r) => r.checked)?.value) || customRadioValue;
@@ -32,10 +33,15 @@ function calculateResult() {
   if (peopleInput.value !== "" && Number(peopleInput.value) === 0) {
     peopleInput.value = "0";
     cantBeZero.classList.add("not-zero");
-    cantBeZeroText.style.display = "block";
+    cant.textContent = "Can't be zero";
+    cant.style.display = "block";
+  } else if (peopleValuteStr.includes(".")) {
+    cantBeZero.classList.add("not-zero");
+    cant.textContent = "Enter whole number";
+    cant.style.display = "block";
   } else {
-    cantBeZero.classList.remove("not-zero");
-    cantBeZeroText.style.display = "none";
+    cant.classList.remove("not-zero");
+    cant.style.display = "none";
   }
 }
 

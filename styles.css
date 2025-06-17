@@ -236,7 +236,7 @@ input[type="radio"]:checked + label.tip-percent {
   background: #f3f9fa;
 }
 
-.cant-be-zero {
+.cant {
   color: #e17457;
   text-align: right;
   font-size: 1.6rem;
